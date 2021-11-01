@@ -1,0 +1,11 @@
+I am going to choose AWS here as it is widely used by many enterprises for IAAS. There are two API's IMDSv1 and IMDSv2, I am going to use IMDSv1 for this challenge IMDSv2 there is a new requirement to pass a
+
+X-aws-ec2-metadata-token and X-aws-ec2-metadata-token-ttl-seconds
+
+The AWS IMDSv1 has an API
+
+http://176.245.176.245/latest/meta-data/
+
+The first call will return the top level Keys and we need to iterate the list of keys with the same API with the key amended at the end. Some of the keys may return another array of keys.
+
+http://176.245.176.245/latest/meta-data/{key}
